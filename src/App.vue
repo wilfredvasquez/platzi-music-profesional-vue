@@ -1,27 +1,30 @@
 <template lang="pug">
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Inicio del Curso Profesional de Platzi"/>
-  </div>
+  #app
+    Header(:headerData="headerData")
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header
+  },
+  data() {
+    return {
+      headerData: {
+        logoSrc: "https://static.platzi.com/media/user_upload/logo-d871d30b-ac23-4240-93f3-13e49084d80b.jpg",
+        textPlaceholder: "Busca tu peli, actor, actriz o director favorito",
+        userName: "Bambi Rodríguez",
+        userImg: "https://static.asianetnews.com/img/default-user-avatar.png",
+      }
+    }
+    
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
-}
+
 </style>
