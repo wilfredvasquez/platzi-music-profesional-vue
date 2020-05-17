@@ -10,10 +10,14 @@
           .navbar-start
 
           .navbar-end.is-gapless
-            .navbar-item()
+            .navbar-item
+              a(@click="selectLang('en')") En
+            .navbar-item
+              a(@click="selectLang('es')") Es
+            .navbar-item
               .buttons
-                router-link.button.is-info(:to="{ name: 'search' }", class="margin-right") Buscar
-                router-link.button.is-info(to="about", class="margin-right") Nosotros
+                router-link.button.is-info(:to="{ name: 'search' }", class="margin-right") {{ $t('search') }}
+                router-link.button.is-info(to="about", class="margin-right") {{ $t('about') }}
 
     .hero-body
       .container.has-text-centered
@@ -26,7 +30,12 @@
 import PmPlayer from '@/components/Player.vue'
 
 export default {
-  components: { PmPlayer }
+  components: { PmPlayer },
+  methods: {
+    selectLang (lang) {
+      this.$i18n.locale = lang
+    }
+  }
 }
 </script>
 
