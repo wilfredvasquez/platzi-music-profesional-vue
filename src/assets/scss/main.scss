@@ -17,3 +17,12 @@
 // @import "~bulma/sass/elements/title.sass";
 // @import "~bulma/sass/layout/section.sass";
 // @import "~bulma/sass/components/card.sass";
+
+.move-enter-active, .move-leave-active {
+    transform: translateX(0);
+    transition: all .3s linear;
+}
+
+.move-enter, .move-leave-to {
+    transform: translateY(100%);
+}
